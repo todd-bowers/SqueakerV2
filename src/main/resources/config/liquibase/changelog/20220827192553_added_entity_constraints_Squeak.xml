@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity Squeak.
+    -->
+    <changeSet id="20220827192553-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="squeak"
+                                 constraintName="fk_squeak__user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="squeak_id"
+                                 baseTableName="rel_squeak__tag"
+                                 constraintName="fk_rel_squeak__tag__squeak_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="squeak"/>
+
+        <addForeignKeyConstraint baseColumnNames="tag_id"
+                                 baseTableName="rel_squeak__tag"
+                                 constraintName="fk_rel_squeak__tag__tag_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tag"/>
+
+        <addForeignKeyConstraint baseColumnNames="squeak_id"
+                                 baseTableName="rel_squeak__mentions"
+                                 constraintName="fk_rel_squeak__mentions__squeak_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="squeak"/>
+
+        <addForeignKeyConstraint baseColumnNames="mentions_id"
+                                 baseTableName="rel_squeak__mentions"
+                                 constraintName="fk_rel_squeak__mentions__mentions_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mentions"/>
+    </changeSet>
+</databaseChangeLog>

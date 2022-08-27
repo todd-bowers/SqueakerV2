@@ -1,0 +1,57 @@
+{
+  "applications": "*",
+  "changelogDate": "20220827192553",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "squeak",
+  "fields": [
+    {
+      "fieldName": "content",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "image",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldName": "created",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "likes",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Squeak",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "user",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "hashtag",
+      "otherEntityName": "tag",
+      "otherEntityRelationshipName": "squeak",
+      "ownerSide": true,
+      "relationshipName": "tag",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityField": "handle",
+      "otherEntityName": "mentions",
+      "otherEntityRelationshipName": "squeak",
+      "ownerSide": true,
+      "relationshipName": "mentions",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,30 @@
+{
+  "applications": "*",
+  "changelogDate": "20220827192555",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "mentions",
+  "fields": [
+    {
+      "fieldName": "handle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength"],
+      "fieldValidateRulesMinlength": "2"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Mentions",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "squeak",
+      "otherEntityRelationshipName": "mentions",
+      "ownerSide": false,
+      "relationshipName": "squeak",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

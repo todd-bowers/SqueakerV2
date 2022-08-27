@@ -1,0 +1,22 @@
+entity Squeak {
+    content String required
+    image ImageBlob
+    created Instant
+    likes Long
+}
+entity Tag {
+    hashtag String required minlength(2)
+}
+entity Mentions {
+    handle String required minlength(2)
+}
+
+relationship ManyToOne {
+    Squeak{user(login)} to User
+}
+relationship ManyToMany {
+    Squeak{tag(hashtag)} to Tag{squeak}
+    Squeak{mentions(handle)} to Mentions{squeak}
+}
+service all with serviceClass
+paginate Squeak, Tag, Mentions with infinite-scroll
