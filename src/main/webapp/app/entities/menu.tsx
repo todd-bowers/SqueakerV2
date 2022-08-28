@@ -21,3 +21,5 @@ const EntitiesMenu = () => {
 };
 
 export default EntitiesMenu;
+
+//will need to remove the mentions and tags

@@ -62,6 +62,7 @@ public class SqueakResource {
             throw new BadRequestAlertException("A new squeak cannot already have an ID", ENTITY_NAME, "idexists");
         }
         squeak.setLikes(Long.valueOf(0));
+
         //        squeak.setUser();
         Squeak result = squeakService.save(squeak);
         return ResponseEntity
